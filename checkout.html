@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #checkoutContainer {
+            max-width: 600px;
+            margin: 50px auto;
+            background:#fff;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 6px 15px rgba(0,0,0,0.1);
+        }
+        #checkoutContainer ul {
+            list-style:none;
+            margin-bottom:15px;
+        }
+        #checkoutContainer li {
+            padding:8px 0;
+            border-bottom:1px solid #eee;
+        }
+        #checkoutContainer button {
+            width:100%;
+            padding:12px;
+            background:#ff9800;
+            color:#fff;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:16px;
+        }
+        #checkoutContainer button:hover {
+            background:#e68900;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div>🎟 EventTickets</div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+</nav>
+
+<div class="section">
+    <div id="checkoutContainer">
+        <h2>Checkout</h2>
+        <ul id="cartList"></ul>
+        <p>Total Items: <span id="cartCount">0</span></p>
+        <button onclick="checkout()">Confirm Purchase</button>
+    </div>
+</div>
+
+<script>
+// Load cart from localStorage
+let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+function displayCart() {
+    const cartList = document.getElementById("cartList");
+    const cartCount = document.getElementById("cartCount");
+
+    cartList.innerHTML = "";
+    cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - ${item.date}`;
+        cartList.appendChild(li);
+    });
+
+    cartCount.textContent = cart.length;
+}
+
+function checkout() {
+    if(cart.length === 0){
+        alert("Your cart is empty!");
+        return;
+    }
+
+    let ticketList = cart.map(item => `${item.name} (${item.date})`).join("\n");
+    alert("Purchase successful!\nYour tickets:\n" + ticketList);
+
+    // Clear cart after checkout
+    localStorage.removeItem("cart");
+    cart = [];
+    displayCart();
+}
+
+displayCart();
+</script>
+
+</body>
+</html>

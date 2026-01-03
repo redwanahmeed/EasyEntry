@@ -1,0 +1,198 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Body ===== */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ===== Navbar ===== */
+nav {
+    background-color: #111;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav div:first-child {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #ff9800;
+}
+
+/* ===== Slider / Hero ===== */
+.slider {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(120deg, #ff9800, #ff5722);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.slider h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.slider p {
+    font-size: 18px;
+}
+
+/* ===== Section ===== */
+.section {
+    padding: 40px 60px;
+}
+
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* ===== Search Box ===== */
+#searchInput {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 25px;
+}
+
+.search-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px; /* was 25px, increase for more space */
+    flex-wrap: wrap;
+}
+
+
+/* ===== Events Grid ===== */
+.events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* ===== Event Card ===== */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* added space between cards */
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+/* ===== Buttons ===== */
+.card button {
+    margin-top: 12px;
+    padding: 10px;
+    width: 100%;
+    background-color: #ff9800;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #e68900;
+}
+
+/* ===== Contact Form ===== */
+form {
+    max-width: 450px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+form textarea {
+    resize: none;
+}
+
+form button {
+    background-color: #111;
+    color: #fff;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #333;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .section {
+        padding: 30px 20px;
+    }
+
+    .slider h1 {
+        font-size: 32px;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+}
